@@ -16,11 +16,11 @@ async function completeVerification() {
   
   const localChecks = {
     'Meta Pixel script tag': localContent.includes('connect.facebook.net/en_US/fbevents.js'),
-    'fbq init with ID 932076202740196': localContent.includes("fbq('init', '932076202740196')"),
+    'fbq init with ID 984887243970027': localContent.includes("fbq('init', '984887243970027')"),
     'PageView tracking': localContent.includes("fbq('track', 'PageView')"),
-    'Noscript fallback': localContent.includes('facebook.com/tr?id=932076202740196&ev=PageView&noscript=1'),
+    'Noscript fallback': localContent.includes('facebook.com/tr?id=984887243970027&ev=PageView&noscript=1'),
     'Script in <head>': /<head>[\s\S]*fbq\('init'[\s\S]*<\/head>/.test(localContent),
-    'Noscript in <body>': /<body>[\s\S]*<noscript>[\s\S]*facebook\.com\/tr\?id=932076202740196[\s\S]*<\/noscript>/.test(localContent)
+    'Noscript in <body>': /<body>[\s\S]*<noscript>[\s\S]*facebook\.com\/tr\?id=984887243970027[\s\S]*<\/noscript>/.test(localContent)
   };
   
   Object.entries(localChecks).forEach(([check, passed]) => {
@@ -40,11 +40,11 @@ async function completeVerification() {
     
     const githubChecks = {
       'Meta Pixel script tag': githubContent.includes('connect.facebook.net/en_US/fbevents.js'),
-      'fbq init with ID 932076202740196': githubContent.includes("fbq('init', '932076202740196')"),
+      'fbq init with ID 984887243970027': githubContent.includes("fbq('init', '984887243970027')"),
       'PageView tracking': githubContent.includes("fbq('track', 'PageView')"),
-      'Noscript fallback': githubContent.includes('facebook.com/tr?id=932076202740196&ev=PageView&noscript=1'),
+      'Noscript fallback': githubContent.includes('facebook.com/tr?id=984887243970027&ev=PageView&noscript=1'),
       'Script in <head>': /<head>[\s\S]*fbq\('init'[\s\S]*<\/head>/.test(githubContent),
-      'Noscript in <body>': /<body>[\s\S]*<noscript>[\s\S]*facebook\.com\/tr\?id=932076202740196[\s\S]*<\/noscript>/.test(githubContent)
+      'Noscript in <body>': /<body>[\s\S]*<noscript>[\s\S]*facebook\.com\/tr\?id=984887243970027[\s\S]*<\/noscript>/.test(githubContent)
     };
     
     Object.entries(githubChecks).forEach(([check, passed]) => {
